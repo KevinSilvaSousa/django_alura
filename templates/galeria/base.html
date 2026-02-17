@@ -1,6 +1,4 @@
-{% extends 'galeria/base.html'%}
 {% load static %}
-{% block content %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,11 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}">
-
 </head>
 
 <body>
+    {% include 'galeria/partials/_header.html' %}
     {% block content %}{% endblock %}
+    {% include 'galeria/partials/_footer.html' %}
 </body>
 
 </html>
