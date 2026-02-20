@@ -3,5 +3,5 @@ from galeria.views import index, imagem
 
 urlpatterns = [
     path('', index, name='index.html'),
-    path('imagem/', imagem, name='imagem.html'),
+    path('imagem/<int:foto_id>', imagem, name='imagem.html'),
 ]
