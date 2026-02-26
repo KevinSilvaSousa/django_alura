@@ -4,7 +4,7 @@
         <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
         <div class="cabecalho__busca">
             <div class="busca__fundo">
-                <form action="{% url 'buscar' %}">
+                <form action="{% url 'usuarios:buscar' %}">
                     <input class="busca__input" type="text" name="buscar" placeholder="O que você procura?">
                     <button type="submit">
                         <img class="busca__icone" src="{% static '/assets/icones/1x/search.png' %}"
@@ -17,9 +17,12 @@
     <main class="principal">
         <section class="menu-lateral">
             <nav class="menu-lateral__navegacao">
-                <a href="#"><img src="{% static '/assets/icones/1x/Home - ativo.png' %}"> Home</a>
-                <a href="#"><img src="{% static '/assets/icones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
-                <a href="#"><img src="{% static '/assets/icones/1x/Novas - inativo.png' %}"> Novas</a>
+                <a href=""><img src="{% static '/assets/icones/1x/Home - ativo.png' %}"> Home</a>
+                <a href="{% url 'usuarios:login' %}"><img
+                        src="{% static '/assets/icones/1x/Mais vistas - inativo.png' %}">
+                    Login</a>
+                <a href="{% url 'usuarios:cadastro' %}"><img src="{% static '/assets/icones/1x/Novas - inativo.png' %}">
+                    Cadastro</a>
                 <a href="#"><img src="{% static '/assets/icones/1x/Surpreenda-me - inativo.png' %}">
                     Surpreenda-me</a>
             </nav>
