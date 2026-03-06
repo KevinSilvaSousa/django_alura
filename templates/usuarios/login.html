@@ -20,6 +20,11 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static 'assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
+            {% for message in messages %}
+            <div class="alert alert-primary" role="alert">
+                <p id="messages">{{message}}</p>
+            </div>
+            {% endfor %}
             <div class="cabecalho_usuarios">
                 <div class='busca__fundo'>
                     <form action="{% url 'usuarios:buscar' %}">
@@ -43,7 +48,10 @@
                     Login</a>
                 <a href="{% url 'usuarios:cadastro' %}"><img src="{% static 'assets/Ícones/1x/Novas - inativo.png' %}">
                     Cadastrar</a>
-                <a href="#"><img src="{% static 'assets/Ícones/1x/Surpreenda-me - inativo.png' %}"> Logout</a>
+                <a href="{% url 'usuarios:logout' %}">
+                    <img src="{% static 'assets/icones/1x/logout - inativo.png' %}">
+                    Logout
+                </a>
             </nav>
         </section>
         <section class="galeria" style="margin-left: 5em">

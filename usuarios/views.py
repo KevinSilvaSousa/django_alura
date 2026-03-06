@@ -64,3 +64,8 @@ def cadastro(request):
 
 def buscar(request):
     return render(request, 'usuarios/buscar.html')
+
+def logout(request):
+    auth.logout(request)
+    messages.success(request, "Logout efetuado com sucesso!")
+    return redirect('login/')
