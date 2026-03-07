@@ -20,13 +20,13 @@ def login(request):
             username=nome,
             password=senha
         )
-        if usuario is not None:
-            auth.login(request, usuario)
-            messages.success(request, f"{nome}, logado com sucesso!")
-            return redirect('galeria:index')
-        else:
-            messages.error(request,"Erro ao efetuar login")
-            return redirect('usuarios:login')
+            if usuario is not None:
+                auth.login(request, usuario)
+                messages.success(request, f"{nome}, logado com sucesso!")
+                return redirect('galeria:index')
+            else:
+                messages.error(request,"Erro ao efetuar login")
+                return redirect('usuarios:login')
 
 
     return render(request, "usuarios/login.html",  {"form": form})
@@ -38,9 +38,6 @@ def cadastro(request):
         form = CadastroForms(request.POST)
 
         if form.is_valid():
-            if form["senha1"].value() != form["senha2"].value():
-                messages.error(request, "Senhas não são iguais")
-                return redirect('usuarios:cadastro')
             
             nome = form["nome_cadastro"].value()
             email = form["email"].value()

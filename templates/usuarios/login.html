@@ -20,11 +20,13 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static 'assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
+            {% if messages %}
             {% for message in messages %}
             <div class="alert alert-primary" role="alert">
-                <p id="messages">{{message}}</p>
+                {{ message }}
             </div>
             {% endfor %}
+            {% endif %}
             <div class="cabecalho_usuarios">
                 <div class='busca__fundo'>
                     <form action="{% url 'usuarios:buscar' %}">
@@ -67,7 +69,7 @@
                     {% endfor %}
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-success col-12" style="padding: top 5px;">Logar</button>
+                    <button type="submit" class="btn btn-success col-12" style="padding-top:  top 5px;">Logar</button>
                 </div>
             </form>
         </section>
