@@ -21,13 +21,7 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-primary" role="alert">
-                {{ message }}
-            </div>
-            {% endfor %}
-            {% endif %}
+            {% include 'galeria/partials/_alertas.html' %}
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
                     <form action="{% url 'usuarios:buscar' %}">
